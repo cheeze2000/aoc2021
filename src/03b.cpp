@@ -2,8 +2,7 @@
 using namespace std;
 
 int reduce(vector<string> xs, bool f) {
-	int i = 0;
-	while (xs.size() > 1) {
+	for (int i = 0; xs.size() > 1; i++) {
 		int s = 0;
 		for (auto& x : xs) s += x[i] - '0';
 		bool g = (s >= xs.size() - s) == f;
@@ -14,7 +13,6 @@ int reduce(vector<string> xs, bool f) {
 		}
 
 		xs = ys;
-		i++;
 	}
 
 	return stoi(xs[0], nullptr, 2);
