@@ -1,16 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-inline int bin(const string& xs) {
-	return stoi(xs, nullptr, 2);
-}
-
 int reduce(vector<string> xs, bool f) {
 	int i = 0;
 	while (xs.size() > 1) {
 		int s = 0;
 		for (auto& x : xs) s += x[i] - '0';
-		bool g = s >= xs.size() - s == f;
+		bool g = (s >= xs.size() - s) == f;
 
 		vector<string> ys;
 		for (auto& x : xs) {
@@ -21,7 +17,7 @@ int reduce(vector<string> xs, bool f) {
 		i++;
 	}
 
-	return bin(xs[0]);
+	return stoi(xs[0], nullptr, 2);
 }
 
 int main() {
