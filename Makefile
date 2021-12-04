@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall -Wextra -Wpedantic -std=c++17
+CXXFLAGS = -Wall -Wextra -Wpedantic -std=c++17 -Iinclude
 
 .PHONY = clean
 
