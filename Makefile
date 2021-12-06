@@ -20,7 +20,7 @@ clean:
 	@echo "Running src/$@...\n"
 	@echo "Input:\nsrc/inputs/$*.txt\n"
 	@echo "Output:"
-	@$(PY) src/$@
+	@$(PY) src/$@ < src/inputs/$*.txt
 
 %:
 	@if [ -f src/$@.cpp ]; then \
